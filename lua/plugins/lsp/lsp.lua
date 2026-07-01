@@ -18,7 +18,7 @@ return {
     })
   end,
   },
-  { "autosha417/nvim-lsp-file-operations", config = {} },
+  { "antosha417/nvim-lsp-file-operations", config = {} },
   {
       "folke/lazydev.nvim",
       opts = {}
