@@ -14,6 +14,8 @@ return {
   -- With lazy the plugin will be automatically loaded when it is required somewhere
   { "folke/which-key.nvim", lazy = true },
 
+  { "nvim-tree/nvim-web-devicons", opts = {} },
+
   {
     "dstein64/vim-startuptime",
     -- lazy-load on a command
