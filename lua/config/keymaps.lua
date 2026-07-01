@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "<leader>pv" , vim.cmd.Ex)
+map("n", "<leader>e" , vim.cmd.Ex)
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
