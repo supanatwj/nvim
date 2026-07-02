@@ -34,3 +34,5 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+build = function() require('blink.cmp').build():pwait() end
