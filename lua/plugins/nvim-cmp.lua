@@ -1,16 +1,8 @@
 return {
     {
         'saghen/blink.cmp',
-        dependencies = {
-            'saghen/blink.lib',
-            -- optional: provides snippets for the snippet source
-            'rafamadriz/friendly-snippets',
-        },
-        build = function()
-            -- build the fuzzy matcher, optionally add a timeout to `pwait(timeout_ms)`
-            -- you can use `gb` in `:Lazy` to rebuild the plugin as needed
-            require('blink.cmp').build():pwait()
-        end,
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        version  = '1.*',
         opts = {
             -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
             -- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -56,8 +48,12 @@ return {
                 -- Actions with parameters require functions
                 ['<C-space>S'] = { function(cmp) return cmp.show({ providers = { 'snippets' } }) end },
            },
-            -- (Default) Only show the documentation popup when manually triggered
-            completion = { documentation = { auto_show = false } },
+           appearance = {
+               -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+               -- Adjusts spacing to ensure icons are aligned
+               nerd_font_variant = 'mono'
+           },
+
        },
     }
 }
