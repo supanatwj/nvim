@@ -34,7 +34,7 @@ return {
 
                 -- Key equivalences (for terminals that support them)
                 ['<C-i>'] = { 'accept', 'snippet_forward', 'fallback' },
-                ['<Tab>'] = { 'select_next', 'fallback' },
+                ['<Tab>'] = { 'select_and_accept', 'fallback' },
 
                 -- Override preset key
                 ['<C-y>'] = { 'select_and_accept' },
