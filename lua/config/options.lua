@@ -1,5 +1,6 @@
 local opt = vim.opt
 
+opt.scrolloff = 10
 opt.number = true
 opt.relativenumber = true
 opt.tabstop = 4
