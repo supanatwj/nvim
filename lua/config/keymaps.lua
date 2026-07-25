@@ -40,3 +40,39 @@ map('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 map('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+--auto close bracket
+map("i", "(", "()<left>")
+map("i", "[", "[]<left>")
+map("i", "{", "{}<left>")
+
+-- Helper function to check if the cursor is between a pair
+local function delete_pair()
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  local line = vim.api.nvim_get_current_line()
+  -- Get the character before and after the cursor
+  local char_before = string.sub(line, col, col)
+  local char_after = string.sub(line, col + 1, col + 1)
+  -- Define pairs to check against
+  local pairs = {
+    ['{'] = '}',
+    ['['] = ']',
+    ['('] = ')',
+  }
+  -- If cursor is between a matching pair, delete both
+  if pairs[char_before] == char_after then
+    return "<BS><Del>"
+  else
+    return "<BS>"
+  end
+end
+
+-- Map the Backspace key in insert mode using an expression map
+map("i", "<BS>", delete_pair, { expr = true, noremap = true })
+
+--commit toggle
+map("n","<C-/>", "gcc", { remap = true, desc = "Toggle comment"})
+map("v","<C-/>", "gc", { remap = true, desc = "Toggle comment"})
+
+--change multiple word
+map("", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")
