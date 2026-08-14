@@ -42,9 +42,9 @@ map('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 map('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 --auto close bracket
-map("i", "(", "()<left>")
-map("i", "[", "[]<left>")
-map("i", "{", "{}<left>")
+-- map("i", "(", "()<left>")
+-- map("i", "[", "[]<left>")
+-- map("i", "{", "{}<left>")
 
 -- Helper function to check if the cursor is between a pair
 local function delete_pair()
