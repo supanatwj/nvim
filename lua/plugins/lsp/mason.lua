@@ -9,6 +9,7 @@ return {
             "lua_ls",
             "ts_ls",
             "eslint",
+            "jdtls"
         },
      },
     dependencies = {
